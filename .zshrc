@@ -10,6 +10,10 @@ zstyle :compinstall filename '/home/abdelrazik/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+#
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Path
 path=("$HOME/.local/scripts" $path)
