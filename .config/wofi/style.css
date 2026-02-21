@@ -1,0 +1,62 @@
+/* ===== Window ===== */
+window {
+  margin: 0px;
+  border: 2px solid #b8bb26;
+  /* Gruvbox green */
+  border-radius: 14px;
+  background-color: #1d2021;
+  /* bg0_hard */
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+}
+
+/* ===== Input ===== */
+#input {
+  margin: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid #3c3836;
+  /* bg2 */
+  background-color: #282828;
+  /* bg1 */
+  color: #ebdbb2;
+  /* fg */
+}
+
+/* ===== Inner container ===== */
+#inner-box {
+  margin: 8px 10px 12px 10px;
+}
+
+/* ===== Entry ===== */
+#entry {
+  padding: 8px 12px;
+  margin: 4px 8px;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+/* ===== Hover ===== */
+#entry:hover {
+  background-color: #3c3836;
+  /* bg2 */
+}
+
+/* ===== Selected ===== */
+#entry:selected {
+  background-color: #504945;
+  /* bg3 */
+  color: #fbf1c7;
+  /* brighter fg */
+}
+
+/* ===== Text ===== */
+#text {
+  margin-left: 10px;
+  color: #ebdbb2;
+}
+
+/* ===== Icon ===== */
+#img {
+  margin-right: 8px;
+}

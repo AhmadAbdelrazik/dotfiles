@@ -1,0 +1,19 @@
+# Show desktop applications
+show=drun
+
+# Matching behavior
+matching=fuzzy
+insensitive=true
+sort_order=alphabetical
+
+# UI behavior
+allow_images=true
+image_size=32
+columns=1
+width=600
+height=500
+location=center
+
+# Behavior
+prompt=Search...
+gtk_dark=true
