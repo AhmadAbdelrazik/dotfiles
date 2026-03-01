@@ -22,3 +22,5 @@ export PATH="$PATH:~/.local/scripts/"
 export PATH="$PATH:~/go/bin/"
 
 eval "$(starship init bash)"
+
+. "$HOME/.local/bin/env"

@@ -19,16 +19,28 @@ source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 path=("$HOME/.local/scripts" $path)
 path=("$HOME/go/bin" $path)
 
-alias ls='ls --color=auto'
-alias la='ls -a'
+
+alias l='ls -lah'
+alias la='ls -lAh'
+alias ll='ls -lh'
+alias ls='ls -G'
+alias lsa='ls -lah'
+alias cd='z'
+
 alias grep='grep --color=auto'
 
 alias v=nvim
-alias vim=nvim
+alias vi=vim
 alias tk='tmux kill-server'
+alias ta='tmux a'
 
 # Bind Ctrl+f to the widget
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey '^ ' autosuggest-accept
 
+
+eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
+
+. "$HOME/.local/bin/env"
