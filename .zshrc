@@ -18,6 +18,7 @@ source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Path
 path=("$HOME/.local/scripts" $path)
 path=("$HOME/go/bin" $path)
+path=("$HOME/.config/composer/vendor/bin" $path)
 
 
 alias l='ls -lah'
@@ -38,9 +39,14 @@ alias ta='tmux a'
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey '^ ' autosuggest-accept
 
+# Map Ctrl+Left and Ctrl+Right for Kitty/Zsh
+bindkey "\e[1;5D" backward-word
+bindkey "\e[1;5C" forward-word
 
 eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
+
+export EDITOR=nvim
 
 . "$HOME/.local/bin/env"
