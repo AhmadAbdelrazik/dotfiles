@@ -49,4 +49,10 @@ eval "$(starship init zsh)"
 
 export EDITOR=nvim
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
+
+setopt COMBINING_CHARS
+
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
