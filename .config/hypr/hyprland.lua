@@ -239,9 +239,18 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Screenshots (uses HYPRSHOT_DIR env var set above)
-hl.bind("print", hl.dsp.exec_cmd("hyprshot -m region"))
-hl.bind("SHIFT + print", hl.dsp.exec_cmd("hyprshot -m output"))
-hl.bind(mainMod .. " + print", hl.dsp.exec_cmd("hyprshot -m window"))
+hl.bind(
+	"print",
+	hl.dsp.exec_cmd("sh -c 'hyprshot -m region --raw | satty --filename - --copy-command wl-copy --early-exit'")
+)
+hl.bind(
+	"SHIFT + print",
+	hl.dsp.exec_cmd("sh -c 'hyprshot -m output --raw | satty --filename - --copy-command wl-copy --early-exit'")
+)
+hl.bind(
+	mainMod .. " + print",
+	hl.dsp.exec_cmd("sh -c 'hyprshot -m window --raw | satty --filename - --copy-command wl-copy --early-exit'")
+)
 
 -- Volume / brightness
 hl.bind(
