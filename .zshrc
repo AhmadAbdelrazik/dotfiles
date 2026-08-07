@@ -19,6 +19,7 @@ source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 path=("$HOME/.local/scripts" $path)
 path=("$HOME/go/bin" $path)
 path=("$HOME/.config/composer/vendor/bin" $path)
+path=("$HOME/.local/bin" $path)
 
 
 alias l='ls -lah'
