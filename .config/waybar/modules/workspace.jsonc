@@ -7,11 +7,17 @@
     },
     "window-rewrite-default": "󰊠",
     "window-rewrite": {
+      "title<.*Microsoft Teams.*>": "󰊻",
+      "title<.*Excalidraw.*>": "󰽉",
+      "title<.*Outlook.*>": "󰴢",
+      "title<.*Whatsapp Web.*>": "",
       // --- Work ---
       "kitty": "󰆍",
       "onlyoffice": "󰏆",
       "firefox": "",
+      "brave": "",
       "code": "󰨞",
+      "slack": "",
       "azahar": "",
       "obsidian": "󰹕",
       "mousepad": "󱓧",
@@ -23,6 +29,7 @@
       // --- Graphics & Visual ---
       "xdg-desktop-portal-gtk": "",
       "thunar": "",
+      "nautilus": "",
       "yazi": "󰇥",
       "imv": "󰄄",
       "swappy": "󰄄",
