@@ -1,44 +1,19 @@
-@import "theme.css";
+@import "tokens/colors.css";
+@import "tokens/state.css";
+@import "tokens/workspace.css";
+@import "tokens/widget.css";
+@import "tokens/batt-clock.css";
+@import "tokens/slider.css";
 
 * {
-	/* ignore GTK theme */
-	all: initial;
-	color: @main-fg;
+  margin: 0;
+  padding: 0;
+  min-height: 0px;
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
 }
 
-@import "styles/fonts.css";
-@import "styles/modules-center.css";
-@import "styles/modules-left.css";
-@import "styles/modules-right.css";
-@import "styles/states.css";
-
-.module {
-	margin-bottom: -1px;
-}
-
-#waybar {
-	background-color: @outline;
-}
-#waybar > box {
-	margin: 4px;
-	background-color: @main-bg;
-}
-
-button {
-	border-radius: 16px;
-	min-width: 16px;
-	padding: 0 10px;
-}
-button:hover {
-	background-color: @hover-bg;
-	color: @hover-fg;
-}
-
-tooltip {
-	border: 2px solid @main-br;
-	border-radius: 10px;
-	background-color: @main-bg;
-}
-tooltip > box {
-	padding: 0 6px;
+window#waybar {
+  background: transparent;
 }
