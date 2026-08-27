@@ -28,6 +28,8 @@ alias ll='ls -lh'
 alias ls='ls -G'
 alias lsa='ls -lah'
 alias cd='z'
+alias y='yazi'
+alias ff='fastfetch'
 
 alias grep='grep --color=auto'
 
