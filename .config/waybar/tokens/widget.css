@@ -61,6 +61,7 @@
 #audio,
 #connections,
 #system,
+#language,
 #storage {
   margin: 4px 5px;
   padding: 6px 6px;
@@ -103,8 +104,8 @@
   padding: 6px 10px;
 }
 
-#tray>.passive,
-#tray>.active,
-#tray>.needs-attention {
+#tray > .passive,
+#tray > .active,
+#tray > .needs-attention {
   -gtk-icon-effect: none;
 }

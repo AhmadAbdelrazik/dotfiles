@@ -32,6 +32,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("waypaper --restore")
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
+	hl.exec_cmd("easyeffects --gapplication-service")
 end)
 
 -------------------------------
