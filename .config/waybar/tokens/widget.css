@@ -62,7 +62,8 @@
 #connections,
 #system,
 #language,
-#storage {
+#storage,
+#brightness {
   margin: 4px 5px;
   padding: 6px 6px;
   background-color: @surface_container;
@@ -84,6 +85,11 @@
 }
 
 #pulseaudio {
+  margin-right: 12px;
+  margin-left: 8px;
+}
+
+#backlight {
   margin-right: 12px;
   margin-left: 8px;
 }
