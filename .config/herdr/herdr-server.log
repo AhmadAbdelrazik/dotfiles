@@ -1,0 +1,16 @@
+2026-08-29T01:19:39.351664Z  INFO herdr::api::server: api server listening path=/home/abdelrazik/.config/herdr/herdr.sock
+2026-08-29T01:19:39.352309Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-08-29T01:19:39.418318Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-29T01:19:39.419538Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=40 cols=120 scrollback_limit_bytes=10000000
+2026-08-29T01:19:39.420123Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=15327
+2026-08-29T01:19:39.420244Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w1" pane_id=1
+2026-08-29T01:19:39.420250Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-08-29T01:19:39.420255Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-08-29T01:19:39.420259Z  INFO herdr::server::headless: created startup workspace cwd=/home/abdelrazik
+2026-08-29T01:19:39.420297Z  INFO herdr::server::headless: client protocol socket listening path=/home/abdelrazik/.config/herdr/herdr-client.sock
+2026-08-29T01:19:39.420314Z  INFO herdr::server::headless: herdr server started api_socket=/home/abdelrazik/.config/herdr/herdr.sock client_socket=/home/abdelrazik/.config/herdr/herdr-client.sock
+2026-08-29T01:19:39.420432Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=15311
+2026-08-29T01:19:39.602522Z  INFO herdr::server::headless: client connected client_id=2 cols=135 rows=33 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-29T01:19:42.376036Z  INFO herdr::server::headless: client detach requested via keybind client_id=2
+2026-08-29T01:19:42.379754Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-08-29T01:19:44.421746Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/home/abdelrazik/.config/herdr/session.json workspaces=1
