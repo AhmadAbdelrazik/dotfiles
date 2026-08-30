@@ -29,6 +29,7 @@ alias ls='ls -G'
 alias lsa='ls -lah'
 alias cd='z'
 alias y='yazi'
+alias h='herdr'
 alias ff='fastfetch'
 
 alias grep='grep --color=auto'
@@ -39,7 +40,7 @@ alias tk='tmux kill-server'
 alias ta='tmux a'
 
 # Bind Ctrl+f to the widget
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^f "herdr-sessionizer\n"
 bindkey '^ ' autosuggest-accept
 
 # Map Ctrl+Left and Ctrl+Right for Kitty/Zsh
