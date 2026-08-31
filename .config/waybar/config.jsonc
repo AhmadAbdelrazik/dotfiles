@@ -7,7 +7,7 @@
   "height": 42,
   "spacing": 6,
   "include": [
-    "./modules/*.jsonc",
+    "./modules/*.jsonc"
   ],
   "modules-left": [
     "group/distro-group",
@@ -24,6 +24,7 @@
     "group/audio",
     "group/brightness",
     "group/connections",
+    "custom/battery-notify",
     "battery",
     "clock",
     "group/tray-group"

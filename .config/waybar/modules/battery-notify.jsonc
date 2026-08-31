@@ -1,0 +1,10 @@
+{
+  "custom/battery-notify": {
+    "format": "",
+    "tooltip": false,
+    "exec-if": "which battery-notify",
+    "exec": "battery-notify",
+    "interval": 60,
+    "signal": 1
+  }
+}
