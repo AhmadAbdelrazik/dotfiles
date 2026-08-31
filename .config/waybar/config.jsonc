@@ -11,22 +11,21 @@
   ],
   "modules-left": [
     "group/distro-group",
-    "group/storage",
-    "group/system",
+    "hyprland/workspaces",
     "hyprland/language"
   ],
   "modules-center": [
     "power-profiles-daemon",
-    "hyprland/workspaces",
+    "clock",
     "idle_inhibitor"
   ],
   "modules-right": [
+    "group/system",
     "group/audio",
     "group/brightness",
     "group/connections",
     "custom/battery-notify",
     "battery",
-    "clock",
     "group/tray-group"
   ]
 }

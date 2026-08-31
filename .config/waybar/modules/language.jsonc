@@ -1,6 +1,6 @@
 {
   "hyprland/language": {
-    "format-en": " EN ",
-    "format-ar": " AR "
+    "format-en": "<span size='11pt'> EN </span>",
+    "format-ar": "<span size='11pt'> AR </span>"
   }
 }
