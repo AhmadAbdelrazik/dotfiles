@@ -1,12 +1,12 @@
 /* ===== Window ===== */
 window {
   margin: 0px;
-  border: 2px solid #b8bb26;
-  /* Gruvbox green */
+  border: 2px solid #a6e3a1;
+  /* green */
   border-radius: 14px;
-  background-color: #1d2021;
-  /* bg0_hard */
-  font-family: "JetBrains Mono", monospace;
+  background-color: #1e1e2e;
+  /* base */
+  font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 14px;
 }
 
@@ -15,12 +15,12 @@ window {
   margin: 14px;
   padding: 10px 14px;
   border-radius: 10px;
-  border: 2px solid #3c3836;
-  /* bg2 */
-  background-color: #282828;
-  /* bg1 */
-  color: #ebdbb2;
-  /* fg */
+  border: 2px solid #45475a;
+  /* surface1 */
+  background-color: #313244;
+  /* surface0 */
+  color: #cdd6f4;
+  /* text */
 }
 
 /* ===== Inner container ===== */
@@ -38,22 +38,23 @@ window {
 
 /* ===== Hover ===== */
 #entry:hover {
-  background-color: #3c3836;
-  /* bg2 */
+  background-color: #45475a;
+  /* surface1 */
 }
 
 /* ===== Selected ===== */
 #entry:selected {
-  background-color: #504945;
-  /* bg3 */
-  color: #fbf1c7;
-  /* brighter fg */
+  background-color: #585b70;
+  /* surface2 */
+  color: #a6e3a1;
+  /* green */
 }
 
 /* ===== Text ===== */
 #text {
   margin-left: 10px;
-  color: #ebdbb2;
+  color: #cdd6f4;
+  /* text */
 }
 
 /* ===== Icon ===== */

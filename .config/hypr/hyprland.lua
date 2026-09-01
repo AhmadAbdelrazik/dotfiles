@@ -252,10 +252,12 @@ hl.bind(
 	"SHIFT + print",
 	hl.dsp.exec_cmd("sh -c 'hyprshot -m output --raw | satty --filename - --copy-command wl-copy --early-exit'")
 )
-hl.bind(
-	mainMod .. " + print",
-	hl.dsp.exec_cmd("sh -c 'hyprshot -m window --raw | satty --filename - --copy-command wl-copy --early-exit'")
-)
+-- hl.bind(
+-- 	mainMod .. " + print",
+-- 	hl.dsp.exec_cmd("sh -c 'hyprshot -m window --raw | satty --filename - --copy-command wl-copy --early-exit'")
+-- )
+
+hl.bind(mainMod .. " + print", hl.dsp.exec_cmd("~/.local/scripts/screen-recorder-toggle"))
 
 -- Volume / brightness
 hl.bind(

@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CRITICAL=10
+LOW=25
+STATE_FILE="${XDG_RUNTIME_DIR:-/tmp}/battery-notify-state"
+
+critical_sent=""
+low_sent=""
+[[ -f "$STATE_FILE" ]] && read -r critical_sent low_sent < "$STATE_FILE"
+
+read_capacity() {
+    local path=""
+    if [[ -d /sys/class/power_supply/BAT* ]]; then
+        path=$(echo /sys/class/power_supply/BAT*)
+        cat "$path/capacity"
+    else
+        upower -i "$(upower -e | grep battery | head -1)" 2>/dev/null |
+            awk '/percentage/{gsub("%",""); print $2}'
+    fi
+}
+
+capacity=$(read_capacity)
+[[ "$capacity" =~ ^[0-9]+$ ]] || exit 0
+
+charging=0
+for p in /sys/class/power_supply/BAT*/status; do
+    [[ -f "$p" ]] && [[ "$(cat "$p")" == "Charging" ]] && charging=1
+done
+
+if [[ $charging -eq 1 ]]; then
+    printf '%s\n' "${critical_sent:-0} ${low_sent:-0}" > "$STATE_FILE"
+    exit 0
+fi
+
+if (( capacity <= CRITICAL )) && [[ "$critical_sent" != 1 ]]; then
+    notify-send -u critical \
+        -i battery-caution \
+        "Battery critical" \
+        "Battery at ${capacity}% — plug in now."
+    critical_sent=1
+elif (( capacity > CRITICAL )); then
+    critical_sent=0
+fi
+
+if (( capacity <= LOW )) && [[ "$low_sent" != 1 ]] && [[ "$critical_sent" != 1 ]]; then
+    notify-send -u normal \
+        -i battery-low \
+        "Battery low" \
+        "Battery at ${capacity}% — consider charging."
+    low_sent=1
+elif (( capacity > LOW )); then
+    low_sent=0
+fi
+
+printf '%s\n' "${critical_sent:-0} ${low_sent:-0}" > "$STATE_FILE"

@@ -1,0 +1,85 @@
+#!/bin/bash
+
+PIDFILE="$XDG_RUNTIME_DIR/wf-recorder.pid"
+MODEFILE="$XDG_RUNTIME_DIR/wf-recorder.mode"
+MIXPIDS="$XDG_RUNTIME_DIR/wf-recorder.mixpids"
+MIXSINK="$XDG_RUNTIME_DIR/wf-recorder.mixsink"
+NULLSINK="screen-recording-mix"
+
+stop_recording() {
+  kill -INT "$(cat "$PIDFILE")" 2>/dev/null
+  while kill -0 "$(cat "$PIDFILE")" 2>/dev/null; do sleep 0.1; done
+  rm -f "$PIDFILE"
+
+  if [ "$(cat "$MODEFILE" 2>/dev/null)" = "both" ]; then
+    while IFS= read -r pid; do
+      kill "$pid" 2>/dev/null
+    done < "$MIXPIDS"
+    rm -f "$MIXPIDS"
+    pactl unload-module "$(cat "$MIXSINK")" 2>/dev/null
+    rm -f "$MIXSINK"
+  fi
+
+  rm -f "$MODEFILE"
+  notify-send "Recording stopped"
+}
+
+start_recording() {
+  local MODE="$1"
+  local GEOM="$2"
+  local FILE DIR
+  local -a WRARGS
+
+  DIR="$HOME/Videos/Recordings"
+  mkdir -p "$DIR"
+  FILE="$DIR/recording-$(date +%Y-%m-%d_%H-%M-%S).mp4"
+
+  case "$MODE" in
+    both)
+      local MIX_ID DEFAULT_SINK DEFAULT_MIC
+      MIX_ID=$(pactl load-module module-null-sink sink_name="$NULLSINK" sink_properties=device.description=screen-recording-mix)
+      DEFAULT_SINK=$(pactl get-default-sink)
+      DEFAULT_MIC=$(pactl get-default-source)
+
+      pw-loopback --capture="$DEFAULT_SINK.monitor" --playback="$NULLSINK" &
+      echo $! >> "$MIXPIDS"
+      pw-loopback --capture="$DEFAULT_MIC" --playback="$NULLSINK" &
+      echo $! >> "$MIXPIDS"
+      echo "$MIX_ID" > "$MIXSINK"
+
+      WRARGS=(--audio="$NULLSINK.monitor")
+      ;;
+    pc)
+      WRARGS=(--audio="$(pactl get-default-sink).monitor")
+      ;;
+    none)
+      WRARGS=()
+      ;;
+    mic)
+      WRARGS=(--audio="$(pactl get-default-source)")
+      ;;
+  esac
+
+  wf-recorder -g "$GEOM" "${WRARGS[@]}" -f "$FILE" &
+  echo $! > "$PIDFILE"
+  echo "$MODE" > "$MODEFILE"
+  notify-send "Recording started" "$FILE"
+}
+
+if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
+  stop_recording
+  exit 0
+fi
+
+MODE=$(printf '1. 🔊 PC audio only\n2. 🔇 No audio\n3. 🎙️ PC + mic\n4. 🎤 Mic only' | wofi --dmenu --prompt "Recording mode" 2>/dev/null)
+MODE="${MODE#*. }"
+case "$MODE" in
+  "🔊 PC audio only") MODE=pc ;;
+  "🔇 No audio") MODE=none ;;
+  "🎙️ PC + mic") MODE=both ;;
+  "🎤 Mic only") MODE=mic ;;
+  *) exit 0
+esac
+
+GEOM=$(slurp) || exit 0
+start_recording "$MODE" "$GEOM"
