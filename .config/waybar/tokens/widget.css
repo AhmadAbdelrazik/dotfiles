@@ -49,7 +49,8 @@
 }
 
 #power-profiles-daemon,
-#idle_inhibitor {
+#idle_inhibitor,
+#memory {
   margin: 4px 5px;
   padding: 6px 15px 6px 10px;
   background-color: @surface_container;
@@ -62,7 +63,6 @@
 #connections,
 #system,
 #language,
-#memory,
 #storage,
 #brightness {
   margin: 4px 5px;

@@ -31,6 +31,7 @@ alias cd='z'
 alias y='yazi'
 alias h='herdr'
 alias ff='fastfetch'
+alias g++='g++ -pedantic-errors -std=c++20 -Wall -Wextra -Wpedantic -Werror -Weffc++ -Wconversion -Wsign-conversion'
 
 alias grep='grep --color=auto'
 
@@ -67,3 +68,6 @@ export EMAIL='ahmadabdelrazik159@gmail.com'
 export GTK_THEME=Adwaita:dark
 export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
 export QT_STYLE_OVERRIDE=Adwaita-Dark
+
+export GOMAXPROCS=4
+export GOMEMLIMIT=6GiB

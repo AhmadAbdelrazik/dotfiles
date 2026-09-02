@@ -1,6 +1,7 @@
 {
   "custom/distro": {
     "format": "",
+    "on-click": "wlogout",
     "tooltip": false
   },
   "custom/terminal": {

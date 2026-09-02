@@ -13,6 +13,7 @@
       "title<.*Excalidraw.*>": "󰽉",
       "title<.*Outlook.*>": "󰴢",
       "title<.*Whatsapp Web.*>": "",
+      "title<.*Gmail.*>": "󰊫",
       // --- Work ---
       "kitty": "󰆍",
       "onlyoffice": "󰏆",
