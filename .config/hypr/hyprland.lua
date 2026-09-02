@@ -14,8 +14,11 @@ hl.monitor({ output = "HDMI-A-1", mode = "1280x1024@75", position = "1536x0", sc
 ---------------------
 
 local terminal = "kitty"
+local browser = "brave"
 local fileManager = "nautilus"
-local menu = "wofi --show drun --allow-images"
+local menu = "walker"
+local displayMonitor = "nwg-displays"
+local calendar = "calcure"
 
 -------------------
 ---- AUTOSTART ----
@@ -33,6 +36,10 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("easyeffects --gapplication-service")
+	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("wl-paste --type text --watch cliphist store")
+	hl.exec_cmd("elephant")
+	hl.exec_cmd("walker --gapplication-service")
 end)
 
 -------------------------------
@@ -186,19 +193,23 @@ local mainMod = "SUPER"
 
 -- Window management
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + SHIFT + return", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
-hl.bind(
-	mainMod .. " + M",
-	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit")
-)
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(menu))
+-- Open System Power Menu via wlogout
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
+
+hl.bind(mainMod .. " + R", hl.dsp.window.resize())
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal .. " -e " .. calendar))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(displayMonitor))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a -f hex"))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprpicker -a -f hsl"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind("CTRL + ALT + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("walker -s clipboard"))
 
 -- Move focus (vim keys)
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
@@ -252,11 +263,16 @@ hl.bind(
 	"SHIFT + print",
 	hl.dsp.exec_cmd("sh -c 'hyprshot -m output --raw | satty --filename - --copy-command wl-copy --early-exit'")
 )
--- hl.bind(
--- 	mainMod .. " + print",
--- 	hl.dsp.exec_cmd("sh -c 'hyprshot -m window --raw | satty --filename - --copy-command wl-copy --early-exit'")
--- )
+-- Toggle Notification Control Center Panel (Super + N)
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
+-- Toggle Do-Not-Disturb Mode (Super + Ctrl + N)
+hl.bind(mainMod .. " + CTRL + N", hl.dsp.exec_cmd("swaync-client -d -sw"))
+
+-- Clear all notifications (Super + Shift + N)
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -C"))
+
+-- screen recording
 hl.bind(mainMod .. " + print", hl.dsp.exec_cmd("~/.local/scripts/screen-recorder-toggle"))
 
 -- Volume / brightness

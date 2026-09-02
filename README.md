@@ -11,7 +11,7 @@ A collection of configuration files for a modern, aesthetic, and productive **Ar
 | **Terminal** | [Kitty](https://sw.kovidgoyal.net/kitty/) (Catppuccin Mocha) |
 | **Shell** | [Zsh](https://www.zsh.org/) + [Starship](https://starship.rs/) prompt |
 | **Multiplexer** | [Tmux](https://github.com/tmux/tmux) + [TPM](https://github.com/tmux-plugins/tpm) · [Herdr](https://herdr.dev) (modern workspace/multiplexer) |
-| **Launcher** | [Wofi](https://hg.sr.ht/~scoopta/wofi) |
+| **Launcher** | [Walker](https://github.com/abenz1267/walker) |
 | **File Manager** | [Yazi](https://yazi-rs.github.io/) (terminal) + Nautilus (GUI) |
 | **Notifications** | [SwayNC](https://github.com/ErikReider/SwayNotificationCenter) |
 | **Screen Lock** | [Hyprlock](https://github.com/hyprwm/hyprlock) (multi-layout, music/battery/weather) |
@@ -28,7 +28,7 @@ Everything below lives in this repo and is applied via `stow .`:
 - **`.config/hyprlock/`** — 18 layouts in `layouts/*.conf`, helper scripts in `scripts/*.sh`, bundled wallpapers
 - **`.config/waybar/`** — `config.jsonc` + auto-loading `modules/*.jsonc`, styling split into `tokens/*.css`
 - **`.config/kitty/`** — `kitty.conf` + Catppuccin theme files
-- **`.config/wofi/`** — launcher `config` + dark `style.css`
+- **`.config/walker/`** — app launcher `config.toml` (full defaults as baseline)
 - **`.config/yazi/`** — Catppuccin-mocha `theme.toml`
 - **`.config/easyeffects/`** — EQ/limiter/etc presets under `db/`
 - **`.config/fastfetch/`** — `config.jsonc`
@@ -50,8 +50,8 @@ Everything below lives in this repo and is applied via `stow .`:
 │   ├── kitty/          # Terminal config & themes
 │   ├── waybar/         # Modular status bar (modules/ + tokens/)
 │   ├── waypaper/       # Wallpaper GUI config
-│   ├── wofi/           # Application launcher
 │   └── yazi/           # Terminal file manager theme
+│   └── walker/         # Application launcher
 ├── .local/scripts/     # Custom utility scripts
 ├── .tmux.conf          # Tmux config (TPM, Catppuccin)
 ├── .zshrc              # Zsh shell configuration
@@ -67,7 +67,7 @@ Everything below lives in this repo and is applied via `stow .`:
 | `hyprland` | Wayland compositor |
 | `waybar` | Status bar |
 | `kitty` | Terminal emulator |
-| `wofi` | Application launcher |
+| `walker` | Application launcher |
 | `yazi` | Terminal file manager |
 | `hyprlock` | Screen locker |
 | `hypridle` | Idle / auto-lock daemon |
@@ -158,25 +158,31 @@ On the live machine, edits made here apply through the symlinks — restart Wayb
 
 ### General
 - `$mod + Return` — Terminal (Kitty)
-- `$mod + Q` — Close active window
-- `$mod + E` — Application launcher (Wofi)
-- `$mod + R` — File manager (Nautilus)
-- `$mod + V` — Toggle floating
+- `$mod + Shift + Return` — Browser (Brave)
+- `$mod + Q` / `Shift + Q` — Close active window
+- `$mod + Space` — Application launcher (Walker)
+- `$mod + Shift + F` — File manager (Nautilus)
+- `$mod + T` — Toggle floating
+- `$mod + R` — Resize mode (arrow keys)
 - `$mod + F` — Toggle fullscreen
-- `$mod + M` — Power menu / exit Hyprland
+- `$mod + Escape` — Power menu (wlogout)
 - `$mod + P` — Color picker (`-f hex`); `$mod + Shift + P` → `-f hsl`
-- `CTRL + ALT + L` — Lock screen (Hyprlock)
+- `$mod + V` — Clipboard history (cliphist → Walker)
+- `$mod + CTRL + L` — Lock screen (Hyprlock)
 
 ### Window management
-- `$mod + H/L/K/J` — Move focus (left/right/up/down)
-- `$mod + Shift + H/L/K/J` — Move window
+- `$mod + H/L/K/J` (or arrows) — Move focus (left/right/up/down)
+- `$mod + Shift + H/L/K/J` (or arrows) — Move window
 - `$mod + 1-0` — Switch to workspace 1-10
 - `$mod + Shift + 1-0` — Move window to workspace
 - `$mod + S` — Toggle special (scratchpad) workspace
+- `$mod + mouse_down` / `mouse_up` — Scroll through workspaces
+- `$mod + left-click` / `right-click` — Drag / resize window
 
 ### Media & system
 - `Print` — Screenshot region; `Shift + Print` — output (via `hyprshot`/`satty`)
 - `$mod + Print` — Screen recording toggle
+- `$mod + N` — Toggle notifications; `Shift + N` — clear; `Ctrl + N` — toggle DND
 - `XF86AudioRaiseVolume` / `Lower` / `Mute` — Volume (via `wpctl`)
 - `XF86MicMute` — Microphone mute toggle
 - `XF86MonBrightnessUp` / `Down` — Brightness (via `brightnessctl`)

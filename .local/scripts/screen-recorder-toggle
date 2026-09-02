@@ -71,7 +71,7 @@ if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
   exit 0
 fi
 
-MODE=$(printf '1. 🔊 PC audio only\n2. 🔇 No audio\n3. 🎙️ PC + mic\n4. 🎤 Mic only' | wofi --dmenu --prompt "Recording mode" 2>/dev/null)
+MODE=$(printf '1. 🔊 PC audio only\n2. 🔇 No audio\n3. 🎙️ PC + mic\n4. 🎤 Mic only' | walker --dmenu --placeholder "Recording mode" 2>/dev/null)
 MODE="${MODE#*. }"
 case "$MODE" in
   "🔊 PC audio only") MODE=pc ;;
