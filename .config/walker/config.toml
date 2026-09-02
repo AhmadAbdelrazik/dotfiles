@@ -6,7 +6,33 @@ single_click_activation = true     # activate items with a single click opposed 
 selection_wrap = false             # wrap list if at bottom or top
 global_argument_delimiter = "#"    # query: firefox#https://benz.dev => part after delimiter will be ignored when querying. this should be the same as in the elephant config
 exact_search_prefix = "'"          # disable fuzzy searching
-theme = "22_catppuchino"   # theme to use
+##########
+# Themes #
+##########
+# 01_blackglass
+# 02_minimalGlass
+# 03_nordminimal
+# 04_cuppatichinominimal
+# 05_obsidianmordern_dark
+# 06_raycasttheme
+# 07_raycasttheme2
+# 08_cyberpunk
+# 09_bluegravy
+# 10_pitchblack
+# 11_gruvebox
+# 12_oceanicdeapth
+# 13_forestcanopy
+# 14_sunsethorizon
+# 15_sunsetTint
+# 16_floatingamber
+# 17_goldenamber
+# 18_vibrant
+# 19_draculablood
+# 20_greeninshvibes
+# 21_nordic
+# 22_catppuchino
+
+theme = "06_raycasttheme"          # theme to use
 disable_mouse = false              # disable mouse (on input and list only)
 debug = false                      # enables debug printing for some stuff, f.e. keybinds
 page_jump_items = 10               # number of items to skip with Page Up/Down
