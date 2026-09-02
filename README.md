@@ -189,6 +189,7 @@ On the live machine, edits made here apply through the symlinks — restart Wayb
 - `$mod + Shift + H/L/K/J` (or arrows) — Move window
 - `$mod + 1-0` — Switch to workspace 1-10
 - `$mod + Shift + 1-0` — Move window to workspace
+- `$mod + CTRL + 1-0` — Move window to workspace without switching
 - `$mod + S` — Toggle special (scratchpad) workspace
 - `$mod + Shift + S` — Move active window to special (scratchpad) workspace
 - `$mod + mouse_down` / `mouse_up` — Scroll through workspaces

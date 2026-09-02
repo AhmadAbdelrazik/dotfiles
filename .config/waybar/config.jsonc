@@ -12,6 +12,7 @@
   "modules-left": [
     "group/distro-group",
     "hyprland/workspaces",
+    "memory",
     "hyprland/language"
   ],
   "modules-center": [
