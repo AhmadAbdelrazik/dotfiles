@@ -1,4 +1,3 @@
-@import "~/.config/omarchy/current/theme/walker.css";
 
 * { all: unset; font-family: monospace; font-size: 18px; color: #ff9a8b; }
 scrollbar { opacity: 0; }
