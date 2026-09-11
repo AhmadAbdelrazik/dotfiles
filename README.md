@@ -4,23 +4,23 @@ A collection of configuration files for a modern, aesthetic, and productive **Ar
 
 ## 🚀 Stack
 
-| Layer | Application |
-| :--- | :--- |
-| **Compositor** | [Hyprland](https://hyprland.org/) (Wayland, dwindle layout) |
-| **Bar** | [Waybar](https://github.com/Alexays/Waybar) (modular, Nerd Font icons) |
-| **Terminal** | [Kitty](https://sw.kovidgoyal.net/kitty/) (Catppuccin Mocha) |
-| **Shell** | [Zsh](https://www.zsh.org/) + [Starship](https://starship.rs/) prompt |
-| **Multiplexer** | [Tmux](https://github.com/tmux/tmux) + [TPM](https://github.com/tmux-plugins/tpm) · [Herdr](https://herdr.dev) (modern workspace/multiplexer) |
-| **Launcher** | [Walker](https://github.com/abenz1267/walker) + [Elephant](https://github.com/abenz1267/elephant) (data provider service) |
-| **File Manager** | [Yazi](https://yazi-rs.github.io/) (terminal) + Nautilus (GUI) |
-| **Notifications** | [SwayNC](https://github.com/ErikReider/SwayNotificationCenter) |
-| **Screen Lock** | [Hyprlock](https://github.com/hyprwm/hyprlock) (blurred current wallpaper, profile pic, clock/date) |
-| **Idle Daemon** | [Hypridle](https://github.com/hyprwm/hypridle) |
-| **Power Menu** | [Wlogout](https://github.com/ArtsyMacaw/wlogout) (lock/hibernate/logout/shutdown/suspend/reboot) |
-| **Calendar** | [Calcure](https://github.com/anufrievroman/calcure) (terminal calendar/journal, bound to `$mod+C`) |
-| **Wallpaper** | [Hyprpaper](https://github.com/hyprwm/hyprpaper) + [Waypaper](https://github.com/anufrievroman/waypaper) (GUI picker) |
-| **Audio / EQ** | PipeWire/WirePlumber/PulseAudio + [EasyEffects](https://github.com/wwmm/easyeffects) |
-| **System Info** | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| Layer             | Application                                                                                                                                   |
+| :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Compositor**    | [Hyprland](https://hyprland.org/) (Wayland, dwindle layout)                                                                                   |
+| **Bar**           | [Waybar](https://github.com/Alexays/Waybar) (modular, Nerd Font icons)                                                                        |
+| **Terminal**      | [Kitty](https://sw.kovidgoyal.net/kitty/) (Catppuccin Mocha)                                                                                  |
+| **Shell**         | [Zsh](https://www.zsh.org/) + [Starship](https://starship.rs/) prompt                                                                         |
+| **Multiplexer**   | [Tmux](https://github.com/tmux/tmux) + [TPM](https://github.com/tmux-plugins/tpm) · [Herdr](https://herdr.dev) (modern workspace/multiplexer) |
+| **Launcher**      | [Walker](https://github.com/abenz1267/walker) + [Elephant](https://github.com/abenz1267/elephant) (data provider service)                     |
+| **File Manager**  | [Yazi](https://yazi-rs.github.io/) (terminal) + Nautilus (GUI)                                                                                |
+| **Notifications** | [SwayNC](https://github.com/ErikReider/SwayNotificationCenter)                                                                                |
+| **Screen Lock**   | [Hyprlock](https://github.com/hyprwm/hyprlock) (blurred current wallpaper, profile pic, clock/date)                                           |
+| **Idle Daemon**   | [Hypridle](https://github.com/hyprwm/hypridle)                                                                                                |
+| **Power Menu**    | [Wlogout](https://github.com/ArtsyMacaw/wlogout) (lock/hibernate/logout/shutdown/suspend/reboot)                                              |
+| **Calendar**      | [Calcure](https://github.com/anufrievroman/calcure) (terminal calendar/journal, bound to `$mod+C`)                                            |
+| **Wallpaper**     | [Hyprpaper](https://github.com/hyprwm/hyprpaper) + [Waypaper](https://github.com/anufrievroman/waypaper) (GUI picker)                         |
+| **Audio / EQ**    | PipeWire/WirePlumber/PulseAudio + [EasyEffects](https://github.com/wwmm/easyeffects)                                                          |
+| **System Info**   | [Fastfetch](https://github.com/fastfetch-cli/fastfetch)                                                                                       |
 
 ## 📦 Tracked Configurations
 
@@ -68,54 +68,55 @@ Everything below lives in this repo and is applied via `stow .`:
 
 ### Core packages (config-tracked apps)
 
-| Package | Purpose |
-| :--- | :--- |
-| `hyprland` | Wayland compositor |
-| `waybar` | Status bar |
-| `kitty` | Terminal emulator |
-| `walker` + `elephant` | Application launcher + shared data provider |
-| `yazi` | Terminal file manager |
-| `hyprlock` | Screen locker |
-| `hypridle` | Idle / auto-lock daemon |
-| `hyprpaper` | Wallpaper daemon |
-| `waypaper` | Wallpaper GUI picker |
-| `wlogout` | Power menu (logout/shutdown/suspend/reboot/hibernate) |
-| `calcure` | Terminal calendar & journal |
-| `lazydocker` | Docker TUI (`$mod+Shift+D`) |
-| `nwg-displays` | Display/portrait config GUI (`$mod+D`) |
-| `obsidian` | Markdown notes |
-| `easyeffects` | Audio equalizer / effects |
-| `fastfetch` | System info fetching |
-| `herdr` | Workspace / agent terminal multiplexer |
-| `zsh` + `starship` | Shell + prompt |
-| `tmux` + `tpm` | Terminal multiplexer + plugin manager |
-| `nautilus` | GUI file manager |
+| Package               | Purpose                                               |
+| :-------------------- | :---------------------------------------------------- |
+| `hyprland`            | Wayland compositor                                    |
+| `waybar`              | Status bar                                            |
+| `kitty`               | Terminal emulator                                     |
+| `walker` + `elephant` | Application launcher + shared data provider           |
+| `yazi`                | Terminal file manager                                 |
+| `hyprlock`            | Screen locker                                         |
+| `hypridle`            | Idle / auto-lock daemon                               |
+| `hyprpaper`           | Wallpaper daemon                                      |
+| `waypaper`            | Wallpaper GUI picker                                  |
+| `wlogout`             | Power menu (logout/shutdown/suspend/reboot/hibernate) |
+| `calcure`             | Terminal calendar & journal                           |
+| `lazygit`             | Git TUI                                               |
+| `lazydocker`          | Docker TUI (`$mod+Shift+D`)                           |
+| `nwg-displays`        | Display/portrait config GUI (`$mod+D`)                |
+| `obsidian`            | Markdown notes                                        |
+| `easyeffects`         | Audio equalizer / effects                             |
+| `fastfetch`           | System info fetching                                  |
+| `herdr`               | Workspace / agent terminal multiplexer                |
+| `zsh` + `starship`    | Shell + prompt                                        |
+| `tmux` + `tpm`        | Terminal multiplexer + plugin manager                 |
+| `nautilus`            | GUI file manager                                      |
 
 ### Runtime tools referenced by the configs
 
 Many configs and scripts call out to these binaries on the live machine:
 
-| Package | Used by |
-| :--- | :--- |
-| `swaync` / `swaync-client` | Notifications (Waybar tray + notifications) |
-| `nm-applet` / `nmcli` | Network applet (autostart, Waybar network) |
-| `blueman` / `rfkill` | Bluetooth manager (Waybar) |
-| `pipewire` / `wireplumber` / `pulseaudio` | Audio (Waybar `pulseaudio`, media keys) |
-| `pavucontrol` | Audio mixer (Waybar audio on-click) |
-| `playerctl` | Media controls |
-| `brightnessctl` | Backlight keys + Waybar slider |
-| `hyprshot` | Screenshots |
-| `grim` + `slurp` + `wl-copy` | Screenshot/recording script capture/copy |
-| `satty` | Screenshot annotation (region/output) |
-| `wf-recorder` + `pw-loopback` + `pactl` | Screen/audio recording toggle |
-| `hyprpicker` | Color picker (`$mod+P`) |
-| `hyprshutdown` | Graceful session exit (used by wlogout logout/shutdown/reboot) |
-| `hyprpolkitagent` | Polkit auth agent (autostart) |
-| `power-profiles-daemon` | Power profiler (Waybar) |
-| `zoxide` | Smart `cd` (`.zshrc`) |
-| `fzf` | Fuzzy finding (sessionizer scripts) |
-| `xclip` | Clipboard in tmux copy mode |
-| `jq` | JSON parsing (sessionizer scripts) |
+| Package                                   | Used by                                                        |
+| :---------------------------------------- | :------------------------------------------------------------- |
+| `swaync` / `swaync-client`                | Notifications (Waybar tray + notifications)                    |
+| `nm-applet` / `nmcli`                     | Network applet (autostart, Waybar network)                     |
+| `blueman` / `rfkill`                      | Bluetooth manager (Waybar)                                     |
+| `pipewire` / `wireplumber` / `pulseaudio` | Audio (Waybar `pulseaudio`, media keys)                        |
+| `pavucontrol`                             | Audio mixer (Waybar audio on-click)                            |
+| `playerctl`                               | Media controls                                                 |
+| `brightnessctl`                           | Backlight keys + Waybar slider                                 |
+| `hyprshot`                                | Screenshots                                                    |
+| `grim` + `slurp` + `wl-copy`              | Screenshot/recording script capture/copy                       |
+| `satty`                                   | Screenshot annotation (region/output)                          |
+| `wf-recorder` + `pw-loopback` + `pactl`   | Screen/audio recording toggle                                  |
+| `hyprpicker`                              | Color picker (`$mod+P`)                                        |
+| `hyprshutdown`                            | Graceful session exit (used by wlogout logout/shutdown/reboot) |
+| `hyprpolkitagent`                         | Polkit auth agent (autostart)                                  |
+| `power-profiles-daemon`                   | Power profiler (Waybar)                                        |
+| `zoxide`                                  | Smart `cd` (`.zshrc`)                                          |
+| `fzf`                                     | Fuzzy finding (sessionizer scripts)                            |
+| `xclip`                                   | Clipboard in tmux copy mode                                    |
+| `jq`                                      | JSON parsing (sessionizer scripts)                             |
 
 ### Fonts & icons
 
@@ -168,23 +169,27 @@ On the live machine, edits made here apply through the symlinks — restart Wayb
 `$mod` = `SUPER` (Windows key)
 
 ### General
+
 - `$mod + Return` — Terminal (Kitty)
 - `$mod + Shift + Return` — Browser (Brave)
+- `$mod + Ctrl + Return` — Browser incognito (Brave)
 - `$mod + Q` / `Shift + Q` — Close active window
 - `$mod + Space` — Application launcher (Walker)
 - `$mod + Shift + F` — File manager (Nautilus)
 - `$mod + C` — Calendar (Calcure in Kitty)
 - `$mod + D` — Display / monitor settings (nwg-displays)
+- `$mod + Shift + O` — Obsidian (Markdown notes)
 - `$mod + Shift + D` — Docker TUI (Lazydocker in Kitty)
 - `$mod + T` — Toggle floating
 - `$mod + R` — Resize mode (arrow keys)
 - `$mod + F` — Toggle fullscreen
-- `$mod + Escape` — Power menu (wlogout)
+- `$mod + Escape` — Toggle power menu (wlogout)
 - `$mod + P` — Color picker (`-f hex`); `$mod + Shift + P` → `-f hsl`
 - `$mod + V` — Clipboard history (cliphist → Walker)
 - `$mod + CTRL + L` — Lock screen (Hyprlock)
 
 ### Window management
+
 - `$mod + H/L/K/J` (or arrows) — Move focus (left/right/up/down)
 - `$mod + Shift + H/L/K/J` (or arrows) — Move window
 - `$mod + 1-0` — Switch to workspace 1-10
@@ -196,6 +201,7 @@ On the live machine, edits made here apply through the symlinks — restart Wayb
 - `$mod + left-click` / `right-click` — Drag / resize window
 
 ### Media & system
+
 - `Print` — Screenshot region; `Shift + Print` — output (via `hyprshot`/`satty`)
 - `$mod + Print` — Screen recording toggle
 - `$mod + N` — Toggle notifications; `$mod + Shift + N` — clear; `$mod + Ctrl + N` — toggle DND
@@ -205,9 +211,11 @@ On the live machine, edits made here apply through the symlinks — restart Wayb
 - `XF86AudioNext` / `Play` / `Pause` / `Prev` — Media (via `playerctl`)
 
 ### Productivity (shell)
+
 - `Ctrl + F` — `herdr-sessionizer` (opens a Herdr workspace for a project)
 - `Ctrl + Space` — accept zsh autosuggestion
 - `Ctrl + Left/Right` — word jump in Kitty/Zsh
 
 ---
-*Maintained by abdelrazik.*
+
+_Maintained by abdelrazik._

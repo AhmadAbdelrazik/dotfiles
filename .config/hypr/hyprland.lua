@@ -19,6 +19,7 @@ local fileManager = "nautilus"
 local menu = "walker"
 local displayMonitor = "nwg-displays"
 local calendar = "calcure"
+local obsidian = "obsidian"
 
 -------------------
 ---- AUTOSTART ----
@@ -194,10 +195,11 @@ local mainMod = "SUPER"
 -- Window management
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + return", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + CTRL + return", hl.dsp.exec_cmd(browser .. " --incognito"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 -- Open System Power Menu via wlogout
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("pkill wlogout || wlogout"))
 
 hl.bind(mainMod .. " + R", hl.dsp.window.resize())
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd(fileManager))
@@ -206,6 +208,7 @@ hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal .. " -e " .. calendar))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(displayMonitor))
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(terminal .. " -e lazydocker"))
+hl.bind(mainMod .. " + SHIFT + O", hl.dsp.exec_cmd(obsidian))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a -f hex"))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprpicker -a -f hsl"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())

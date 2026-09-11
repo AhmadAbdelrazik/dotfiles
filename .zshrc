@@ -32,6 +32,7 @@ alias y='yazi'
 alias h='herdr'
 alias ff='fastfetch'
 alias g++='g++ -pedantic-errors -std=c++20 -Wall -Wextra -Wpedantic -Werror -Weffc++ -Wconversion -Wsign-conversion'
+alias g='lazygit'
 
 alias grep='grep --color=auto'
 
