@@ -208,7 +208,7 @@ hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal .. " -e " .. calendar))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(displayMonitor))
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(terminal .. " -e lazydocker"))
-hl.bind(mainMod .. " + SHIFT + O", hl.dsp.exec_cmd(obsidian))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(obsidian))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a -f hex"))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprpicker -a -f hsl"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
@@ -301,8 +301,16 @@ hl.bind(
 	hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("swayosd-client --brightness raise"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("swayosd-client --brightness lower"), { locked = true, repeating = true })
+hl.bind(
+	"XF86MonBrightnessUp",
+	hl.dsp.exec_cmd("swayosd-client --brightness raise"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86MonBrightnessDown",
+	hl.dsp.exec_cmd("swayosd-client --brightness lower"),
+	{ locked = true, repeating = true }
+)
 
 -- Media controls (requires playerctl)
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })

@@ -9,6 +9,7 @@
     },
     "window-rewrite-default": "󰊠",
     "window-rewrite": {
+      "title<X.*>": "𝕏",
       "title<.*Microsoft Teams.*>": "󰊻",
       "title<.*Excalidraw.*>": "󰽉",
       "title<.*Outlook.*>": "󰴢",
